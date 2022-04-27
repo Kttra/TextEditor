@@ -58,3 +58,12 @@ Additionally, when you press the number button a prompt will pop up asking for w
 <p align="center">
 <img src="https://user-images.githubusercontent.com/100814612/165632531-5a52ee49-77a5-42fc-8ff0-1cb2d4d71666.png"><img>
 </p>
+
+**Targets & Outputs**
+---------
+Each button targets and outputs to a different textbox. Below is the targetting specifications:
+- Replace: Original Text -> Nex Text
+- Overwrite: New Text -> Original Text
+- Clean: Original Text -> Nex Text
+- Trim: Original Text -> Nex Text
+- Number: New Text -> New Text
