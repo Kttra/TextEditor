@@ -62,8 +62,13 @@ Additionally, when you press the number button a prompt will pop up asking for w
 **Targets & Outputs**
 ---------
 Each button targets and outputs to a different textbox. Below is the targetting specifications:
-- Replace: Original Text -> New Text
-- Overwrite: New Text -> Original Text
-- Clean: Original Text -> New Text
-- Trim: Original Text -> New Text
-- Number: New Text -> New Text
+- Replace:    
+  - Original Text -> New Text
+- Overwrite:
+  - New Text -> Original Text
+- Clean:
+  - Original Text -> New Text
+- Trim:
+  - Original Text -> New Text
+- Number:
+  - New Text -> New Text
