@@ -17,7 +17,7 @@
     Trims each line
     Removes lines that are empty
     Replaces the word "ex " with "Bonus. "
-    Removes any quotations, parentheses, commas, "!", "?", "...", "~", "[", "]", "œ", "š", "Track", "Truck", and "™"
+    Removes any quotations, parentheses, commas, "!", "?", "...", "~", "[", "]", "ÂÅ“", "ÂÅ¡", "Track", "Truck", and "Ââ„¢"
     
     Number:
     Removes any numbers in the text and then starts to number each line
@@ -80,7 +80,7 @@ namespace textEditor
             editedText = Regex.Replace(editedText, @"\s[0-9]{1,2}[:][0-9]{1,2}", "");
 
             //Add or remove elements from the array to change what will be removed
-            var charsToRemove = new string[] { "\"", "!", "?", ")", "(", "...", "~", "[", "]", "œ", "š", "Track", "Truck", "™", "," };
+            var charsToRemove = new string[] { "\"", "!", "?", ")", "(", "...", "~", "[", "]", "ÂÅ“", "ÂÅ¡", "Track", "Truck", "Ââ„¢", "," };
             editedText = RemoveString(charsToRemove, editedText);
 
             //Add a dot after each number
@@ -166,6 +166,9 @@ namespace textEditor
             //Removes any empty lines
             var lines = EditedTextBox.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
+            //Replace each newline with a space instead
+            EditedTextBox.Text = Regex.Replace(EditedTextBox.Text, @"\r\n?|\n", " ");
+
             //Removes extra spaces, helpful to fix spacing after character removal
             for (int i = 0; i < lines.Length; i++)
             {
@@ -173,9 +176,6 @@ namespace textEditor
             }
 
             EditedTextBox.Lines = lines;
-
-            //Last step, replace each newline with a space instead
-            EditedTextBox.Text = Regex.Replace(EditedTextBox.Text, @"\r\n?|\n", " ");
         }
 
         //Remove specific strings
