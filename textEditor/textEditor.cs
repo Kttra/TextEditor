@@ -176,6 +176,9 @@ namespace textEditor
             }
 
             EditedTextBox.Lines = lines;
+            
+            //Replace each newline with a space instead, repeat due to some cases where there are multiple spaces after a newline
+            EditedTextBox.Text = Regex.Replace(EditedTextBox.Text, @"\r\n?|\n", " ");
         }
 
         //Remove specific strings
